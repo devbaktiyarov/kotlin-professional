@@ -10,6 +10,11 @@ fun main() {
     for (i in arr) {
         println(i)
     }
+
+//    printInfo("John", "Doe", "")
+    printInfo("Doe", "John")
+    printInfo( "Doe")
+    printInfo( patronymic = "Gustafson") // Именованный параметр
 }
 
 //fun max(a: Int, b: Int) : Int {
@@ -41,10 +46,10 @@ fun sum(vararg numbers: Int): Int {
 fun sort(array: Array<Int>): List<Int> {
     for (i in 0 until array.size) {
         for (j in 0 until array.size - i - 1) {
-            if (array[j] > array[j + 1]) { // O(1)
-                var temp: Int = array[j]; // O(1)
-                array[j] = array[j + 1]; // O(1)
-                array[j + 1] = temp; // O(1)
+            if (array[j] > array[j + 1]) {
+                var temp: Int = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = temp
             }
         }
     }
@@ -52,3 +57,27 @@ fun sort(array: Array<Int>): List<Int> {
     val list: List<Int> = array.toList();
     return list
 }
+
+fun printInfo(lastname: String = "", name: String = "", patronymic: String = "") { // Дефолтный параметр
+    if (lastname.isNotEmpty()) {
+        println("Фамилия $lastname")
+    }
+    if (name.isNotEmpty()) {
+        println("Имя $name")
+    }
+    if (patronymic.isNotEmpty()) {
+        println("Отчество $patronymic")
+    }
+}
+
+//fun printInfo(lastname: String, name: String, patronymic: String) {
+//    println("Фамилия $lastname")
+//    println("Имя $name")
+//    if (patronymic.isNotEmpty()) {
+//        println("Отчество $patronymic")
+//    }
+//}
+
+//fun printInfo(lastname: String, name: String) {
+//    printInfo(lastname, name, "")
+//}
