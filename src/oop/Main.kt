@@ -15,4 +15,28 @@ fun main() {
     dog.weight = 10.1f
     println("Name ${dog.name} Age: ${dog.age} Weight: ${dog.weight}")
 
+    val car = Car("Tesla", "Tesla Model 3", 2016)
+    car.yearOfManufacture = 2017
+    println(car.yearOfManufacture)
+    car.printInfo()
+    val secondCar = Car("Tesla", "Tesla Model 3", 2017)
+    println(secondCar.isOld)
+
+    println()
+
+    println(car)
+    println(secondCar)
+
+    println(car.hashCode())
+    println(secondCar.hashCode())
+
+    println(car === secondCar)
+    println(car == secondCar)
+
+    val(brand, model, year) = car
+    println(brand)
+}
+
+fun Car.printInfo() {
+    println("Brand: $brand Model: $model Year of manufacture: $yearOfManufacture")
 }
