@@ -35,6 +35,19 @@ fun main() {
 
     val(brand, model, year) = car
     println(brand)
+
+    val day = DayOfWeek.SATURDAY
+    val isWorkday = when(day) {
+        DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY,
+            DayOfWeek.THURSDAY, DayOfWeek.FRIDAY -> true
+        DayOfWeek.SATURDAY, DayOfWeek.SUNDAY -> false
+    }
+    println(day.wakeUpTime)
+    println(isWorkday)
+
+
+
+
 }
 
 fun Car.printInfo() {
